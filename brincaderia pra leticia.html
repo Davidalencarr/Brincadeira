@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quero o cu</title>
+<style>
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  #botaoFixo, #botaoFuja {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+    position: relative;
+  }
+
+  #botaoFuja {
+    position: absolute;
+  }
+</style>
+</head>
+<body>
+
+<h2>VAI ME DA O CU NO FINAL DE SEMANA?:</h2>
+<button id="botaoFixo" onclick="mostrarMensagem()">COM CERTEZA</button>
+<button id="botaoFuja" onmouseover="fugir()">NÃO</button>
+
+<script>
+  function fugir() {
+    const botaoFuja = document.getElementById('botaoFuja');
+    const larguraJanela = window.innerWidth;
+    const alturaJanela = window.innerHeight;
+
+    const novaPosicaoX = Math.random() * (larguraJanela - botaoFuja.offsetWidth);
+    const novaPosicaoY = Math.random() * (alturaJanela - botaoFuja.offsetHeight);
+
+    botaoFuja.style.left = novaPosicaoX + 'px';
+    botaoFuja.style.top = novaPosicaoY + 'px';
+  }
+
+  function mostrarMensagem() {
+    alert("Lhe aguardo no Final de semana >:)");
+  }
+</script>
+
+</body>
+</html>
